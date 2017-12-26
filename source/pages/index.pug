@@ -1,0 +1,70 @@
+extends ./layout/main.pug
+
+
+block title
+	title Main Page
+
+block pagecontent
+	include ./functions/functions.pug
+	//
+		<?php
+		$news = getNews(12, $_GET["id"]);
+		$ban = getBanner(3, $_GET["id"])
+		?>
+
+	.main_body
+				.best
+					|Best Deals
+
+				.category
+
+					a(href="/company.php?id_cat=5") Meizu
+					a(href="/company.php?id_cat=1") Apple
+					a(href="/company.php?id_cat=3") Samsung
+					a(href="/company.php?id_cat=4") Huawei
+					a(href="/company.php?id_cat=2") Google
+
+				.tovars
+					
+					| <?php
+					| for($i = 0; $i<count($ban); $i++){
+					| echo " <div class=\"device_info\">";
+					| echo '<span>'.$ban[$i]["title"].'</span><img src="img/tovars/'.$ban[$i]["image"].'.jpg" alt=""/>
+					| <div class="bttns" style="margin-top: 8px;">
+					| <div class="shop_bttn bottom">buy now</div>
+					| <div class="bottom"><a href="/article.php?id='.$ban[$i]["id"].'">learn more</a></div>
+					| </div>
+					| </div>';
+					| }
+					| ?>
+
+				
+				
+				
+				span.asd New Devices
+	
+				.tovars
+					
+					| <?php
+					| for($i = 0; $i<count($news); $i++){
+					| echo " <div class=\"device_info\">";
+					| echo '<span>'.$news[$i]["title"].'</span><img src="img/tovars/'.$news[$i]["image"].'.jpg" alt=""/>
+					| <div class="bttns" style="margin-top: 8px;">
+					| <div class="shop_bttn bottom">buy now</div>
+					| <div class="bottom"><a href="/article.php?id='.$news[$i]["id"].'">learn more</a></div>
+					| </div>
+					| </div>';
+					| }
+					| ?>
+					
+
+				
+	
+	
+	
+
+
+		
+
+
+	

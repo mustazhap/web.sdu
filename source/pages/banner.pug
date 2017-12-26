@@ -1,0 +1,71 @@
+extends ./layout/main.pug
+
+
+block title
+	|<?php 
+	|echo '<title>$news["title"]</title>';
+	|
+	|?>
+
+
+	
+
+block pagecontent
+	include ./functions/functions.pug
+	
+	//
+		<?php
+		$news = getBanner(1, $_GET["id"]);
+		$title = $news["title"];
+		?>
+
+	.main_body
+		| <?php
+		| 
+		| 
+		| echo '
+		| <div class="full_article">
+		| <div class="fa_left">
+		|
+		|	<img src="img/tovars/'.$news["image"].'.jpg" alt=""/>
+		| </div>
+		| <div class="fa_right">
+		| <div class="right_top">
+		|	<span>'.$news["title"].'</span>
+		|	<p>'.$news["full_text"].'</p> </div>
+		| <div class="right_bottom">
+		|	<p>Price:  '.$news["price"].'$</p> 		
+		| <div class="bttns" style="margin-top: 8px;">
+		| <div class="shop_bttn bottom">buy now</div>
+		|  </div>
+		| </div>
+		| </div>		
+		| 
+		| </div>';
+		| 
+		| ?>
+
+		.moremore More devices
+		.tovars
+					
+					| <?php
+					|	$news = getNews(6, 0);
+					| for($i = 3; $i<count($news); $i++){
+					| echo " <div class=\"device_info\">";
+					| echo '<span>'.$news[$i]["title"].'</span><img src="img/tovars/'.$news[$i]["image"].'.jpg" alt=""/>
+					| <div class="bttns" style="margin-top: 8px;">
+					| <div class="shop_bttn bottom">buy now</div>
+					| <div class="more_bttn bottom"><a href="/article.php?id='.$news[$i]["id"].'">learn more</a></div>
+					| </div>
+					| </div>';
+					| }
+					| ?>
+					
+	
+	
+
+
+		
+
+
+	

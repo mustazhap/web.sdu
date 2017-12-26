@@ -1,0 +1,29 @@
+.full_article{
+	display: flex;
+	padding: 20px;	
+	width: 900px;
+	margin-bottom: 50px;
+	img{
+		width: 314px;
+		height: 380px;
+	}
+
+}
+
+.fa_right{
+	padding: 10px 20px 40px 20px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+	span{
+		font-size: 30px;
+		text-transform: uppercase;
+	}
+
+}
+
+.moremore{
+	font-size: 30px;
+	color: #aaa;
+}
